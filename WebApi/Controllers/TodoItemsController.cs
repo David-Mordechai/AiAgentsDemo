@@ -12,6 +12,7 @@ public class TodoItemsController(ILogger<TodoItemsController> logger) : Controll
     [HttpGet]
     public ActionResult<IEnumerable<TodoDto>> GetAll()
     {
+        logger.LogInformation("GetAll todo list was called");
         return Ok(Todos);
     }
 

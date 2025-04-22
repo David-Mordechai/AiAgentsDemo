@@ -63,7 +63,7 @@ internal class WebApiPlugin(IHttpClientFactory httpClientFactory)
 
     [KernelFunction("get_todo_details")]
     [Description("Gets details about a todo item using its title.")]
-    [return: Description("Returns the todo item as a JSON string.")]
+    [return: Description("Returns the todo item as a JSON string. each todo item should containe title, description and status")]
     public async Task<string> GetTodoDetailsAsync(
         [Description("The title of the todo item")] string title)
     {

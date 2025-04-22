@@ -10,8 +10,8 @@ public class Worker(Kernel kernel) : BackgroundService
     {
         ChatCompletionAgent agent = new() // 👈🏼 Definition of the agent
         {
-            Instructions = "You are a friendly assistant.",
-            Name = "friendly_assistant",
+            Instructions = "You are a assistant that helps manage Todo list using only todo_list_plugin",
+            Name = "todo_list_assistant",
             Kernel = kernel,
             Arguments = new KernelArguments(new PromptExecutionSettings
             {
@@ -19,7 +19,7 @@ public class Worker(Kernel kernel) : BackgroundService
             })
         };
 
-        agent.Kernel.ImportPluginFromType<WebApiPlugin>();
+        agent.Kernel.ImportPluginFromType<WebApiPlugin>("todo_list_plugin");
 
         AgentThread thread = new ChatHistoryAgentThread();
 
