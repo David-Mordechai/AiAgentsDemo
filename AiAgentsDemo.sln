@@ -2,7 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiAgentsDemo", "AiAgentsDemo.csproj", "{BE3C1D09-6CBC-0A5C-8351-27C2AF4DFE2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{741F2B16-4C78-44F4-A428-1BDC3B6A0423}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatService", "ChatService\ChatService.csproj", "{7D1ECB28-5A57-4600-8467-C0125FD18EE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +12,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BE3C1D09-6CBC-0A5C-8351-27C2AF4DFE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE3C1D09-6CBC-0A5C-8351-27C2AF4DFE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE3C1D09-6CBC-0A5C-8351-27C2AF4DFE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE3C1D09-6CBC-0A5C-8351-27C2AF4DFE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{741F2B16-4C78-44F4-A428-1BDC3B6A0423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741F2B16-4C78-44F4-A428-1BDC3B6A0423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741F2B16-4C78-44F4-A428-1BDC3B6A0423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741F2B16-4C78-44F4-A428-1BDC3B6A0423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D1ECB28-5A57-4600-8467-C0125FD18EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D1ECB28-5A57-4600-8467-C0125FD18EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D1ECB28-5A57-4600-8467-C0125FD18EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D1ECB28-5A57-4600-8467-C0125FD18EE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

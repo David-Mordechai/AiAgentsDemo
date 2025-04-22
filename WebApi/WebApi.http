@@ -1,0 +1,39 @@
+@WebApi_HostAddress = http://localhost:5024
+
+### Get all todo items
+GET {{WebApi_HostAddress}}/TodoItems/
+Accept: application/json
+
+###
+
+### Get a todo item by ID
+GET {{WebApi_HostAddress}}/TodoItems/2
+Accept: application/json
+
+###
+
+### Create a new todo item
+POST {{WebApi_HostAddress}}/TodoItems/
+Content-Type: application/json
+
+{
+  "title": "Buy groceries",
+  "description": "Milk, eggs, and bread"
+}
+
+###
+
+### Update an existing todo item
+PUT {{WebApi_HostAddress}}/TodoItems/1
+Content-Type: application/json
+
+{
+  "title": "Buy groceries and snacks",
+  "description": "Milk, eggs, bread, and chips"
+}
+
+###
+
+### Delete a todo item
+DELETE {{WebApi_HostAddress}}/TodoItems/1
+Accept: application/json
