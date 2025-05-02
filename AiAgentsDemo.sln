@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatService", "ChatService\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentGroupChatDemo", "AgentGroupChatDemo\AgentGroupChatDemo.csproj", "{BFAA48B4-75B6-43A1-95F5-25933FEC590B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CallingWebApi", "CallingWebApi", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{741F2B16-4C78-44F4-A428-1BDC3B6A0423} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{7D1ECB28-5A57-4600-8467-C0125FD18EE0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B93FB607-77A4-4638-A734-AA975F903D59}
