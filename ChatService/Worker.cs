@@ -4,10 +4,22 @@ using Microsoft.SemanticKernel.Agents;
 
 namespace ChatService;
 
-public class Worker(Kernel kernel) : BackgroundService
+public class Worker : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        var kernelBuilder = Kernel.CreateBuilder();
+        
+        kernelBuilder.Services.AddHttpClient("WebApi", client =>
+        {
+            client.BaseAddress = new Uri("https://localhost:7235");
+        });
+
+        #pragma warning disable SKEXP0070 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        kernelBuilder.AddOllamaChatCompletion("qwen3:4b", new Uri("http://localhost:11434"));
+        
+        var kernel = kernelBuilder.Build();
+
         ChatCompletionAgent agent = new() // 👈🏼 Definition of the agent
         {
             Instructions = """
