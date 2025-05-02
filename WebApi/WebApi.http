@@ -37,3 +37,9 @@ Content-Type: application/json
 ### Delete a todo item
 DELETE {{WebApi_HostAddress}}/TodoItems/1
 Accept: application/json
+
+###
+
+### Delete all
+DELETE {{WebApi_HostAddress}}/TodoItems
+Accept: application/json

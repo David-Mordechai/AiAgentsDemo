@@ -56,6 +56,14 @@ public class TodoItemsController(ILogger<TodoItemsController> logger) : Controll
         return NoContent();
     }
 
+    [HttpDelete]
+    public ActionResult Delete()
+    {
+        logger.LogInformation("Delete all todo items api was called");
+        Todos.Clear();
+        return NoContent();
+    }
+
     [HttpDelete("{id:int}")]
     public ActionResult Delete(int id)
     {

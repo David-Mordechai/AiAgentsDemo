@@ -25,7 +25,7 @@ internal class WebApiPlugin(IHttpClientFactory httpClientFactory)
 
     [KernelFunction("get_all_todos")]
     [Description("Gets the full list of todo items.")]
-    [return: Description("Returns all todo items as a JSON array.")]
+    [return: Description("Each todo item {Title, Status}")]
     public async Task<string> GetAllTodosAsync()
     {
         try
@@ -63,7 +63,7 @@ internal class WebApiPlugin(IHttpClientFactory httpClientFactory)
 
     [KernelFunction("get_todo_details")]
     [Description("Gets details about a todo item using its title.")]
-    [return: Description("Returns the todo item as a JSON string. each todo item should containe title, description and status")]
+    [return: Description("Returns the todo item as a JSON string. each todo item should contain Status")]
     public async Task<string> GetTodoDetailsAsync(
         [Description("The title of the todo item")] string title)
     {
@@ -110,6 +110,16 @@ internal class WebApiPlugin(IHttpClientFactory httpClientFactory)
         return response.IsSuccessStatusCode;
     }
 
+    [KernelFunction("delete_all_todo_items")]
+    [Description("Delete all todo items. This is also true if you asked to clear all todo tasks or empty the todo list")]
+    [return: Description("Returns true if the todo was deleted successfully.")]
+    public async Task<bool> DeleteAllTodoItemsAsync()
+    {
+        using var httpClient = httpClientFactory.CreateClient("WebApi");
+        var response = await httpClient.DeleteAsync($"TodoItems");
+        return response.IsSuccessStatusCode;
+    }
+
     [KernelFunction("delete_todo")]
     [Description("Deletes a todo item by title.")]
     [return: Description("Returns true if the todo was deleted successfully.")]
@@ -127,9 +137,9 @@ internal class WebApiPlugin(IHttpClientFactory httpClientFactory)
     // Internal DTO for deserialization
     private class TodoDto
     {
-        public int Id { get; set; }
-        public string Title { get; set; } = "";
-        public string Description { get; set; } = "";
-        public string Status { get; set; } = "";
+        public int Id { get; init; }
+        public string Title { get; init; } = "";
+        public string Description { get; init; } = "";
+        public string Status { get; init; } = "";
     }
 }

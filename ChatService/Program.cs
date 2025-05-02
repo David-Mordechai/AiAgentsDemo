@@ -11,7 +11,7 @@ builder.Services.AddHttpClient("WebApi", client =>
 var kernelBuilder = builder.Services.AddKernel();
 
 #pragma warning disable SKEXP0070 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-kernelBuilder.AddOllamaChatCompletion("llama3.2", new Uri("http://localhost:11434"));
+kernelBuilder.AddOllamaChatCompletion("qwen3:4b", new Uri("http://localhost:11434"));
 
 var host = builder.Build();
 host.Run();
